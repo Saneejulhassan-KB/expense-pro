@@ -29,144 +29,40 @@
         href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500&family=Covered+By+Your+Grace&family=Dancing+Script:wght@400;500;600;700&family=Instrument+Serif&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@900&family=Roboto:wght@400;500;900&family=Rubik+Burned&family=Rubik:ital,wght@0,300;0,400;0,500;0,800;1,300;1,400&family=Salsa&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&family=Square+Peg&display=swap"
         rel="stylesheet">
 
-
-    <!-- font awesome -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>
     <div class="container">
-
-        <!-- welcome user -->
-        <div class="row d-flex justify-content-between mt-4">
-            <div class="col-6">
-                <h3 id="welcome" style="color: aqua;"><i class="fa-solid fa-user fa-fade"
-                        style="color: aqua;"></i>Welcome User</h3>
-            </div>
-            <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-danger ">Logout <i class="fa-solid fa-power-off"></i></button>
-            </div>
+        <div class="title row text-center mt-5 fs-4 text-light" style="display: flex; position: relative;">
+            <h1 style="font-family: Philosopher ,sans-serif; font-size: 50px;">Expense Pro</h1>
+            <p style="font-size: large; "><i>"Budget Smarter,Balance Better..."</i></p>
         </div>
 
-        <div class="title row text-center mt-4 fs-4 text-light" style="display: flex; position: relative;">
-            <div style="background-color:rgba(0, 0, 0, 0.5); height: 80px;">
-                <h1 style="font-family: Philosopher ,sans-serif; font-size: 50px;  font-weight: 600 ; margin-top: 5px;">
-                    Expense Pro</h1>
+        <div class="row mt-5">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div id="outer-box" class="card text-center" style="width: 30rem; margin-left: -35px;">
+                    <div class="card-body m-2">
+                        <div>
+                            <h2 class="card-title " style="color: rgb(255, 255, 255); margin-left: 20px;"><i>Login</i>
+                                <img src="https://cdn-icons-png.flaticon.com/512/4635/4635361.png" alt="" width="30px">
+                            </h2>
+                        </div>
+                        <input class="form-control me-2 mt-4" type="text" placeholder="Username" aria-label="Username"
+                            style="height: 35px;" id="loginUname">
+                        <input class="form-control me-2 mt-4" type="password" placeholder="Password"
+                            aria-label="password" style="height: 35px;" id="loginPswd">
+                        <button type="button" class="btn btn-primary mt-4" id="loginButton"
+                            onclick="login()">Login</button>
+                        <button type="button" class="btn btn-success mt-4" id="registerPage"
+                            onclick="registerPage()">Register</button>
+                              
+                    </div>
+                </div>
             </div>
-
-        </div>
-
-        <!-- -------------bal and expense top--------- -->
-        <div
-            class="row row-cols-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1 text-center d-flex align-items-center justify-content-around ">
-            <div class="col rounded mt-5"
-                style="height: 150px;width: 200px;  background-color: rgba(0, 0, 0, 0.5); box-shadow: 2px, 2px, 20px #5f5b5b; color: white; ">
-
-                <h3 class="pt-2">Total Balance</h3>
-                <h3 id="balanceAmount" class="mt-5 "> Rs 0/-</h3>
-
-            </div>
-            <div class="col rounded mt-5"
-                style="height: 150px;width: 200px; background-color: rgba(0, 0, 0, 0.5); box-shadow: 2px, 2px, 20px #5f5b5b; color: white; ">
-
-                <h3 class="pt-2 ">Total Expense</h3>
-                <h3 id="expenseAmount" class="mt-5"> Rs 0/-</h3>
-
-            </div>
-
-        </div>
-        <!-- balance input -->
-        <div class="row row-cols-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1">
-            <div class="balance-input col text-center mt-4">
-                <h3 style="color: white;">Add Income</h3>
-                <hr class="w-75 mx-auto" style="background-color: rgb(0, 217, 255); height: 5px;">
-                <input id="incomeType" class="form-control  mt-4 w-75 mx-auto" type="text"
-                    placeholder="Enter Income Type" aria-label="Username" style="height: 35px;">
-                <input id="incomeAmount" class="form-control  mt-4 w-75 mx-auto" type="text" placeholder="Enter Amount"
-                    aria-label="Username" style="height: 35px;">
-                <button id="addIncome" type="button" class="btn btn-success mt-4 w-75"
-                    style="font-weight: 700;  height: 35px;" onclick="addIncome()">Add
-                    Income</button>
-
-            </div>
-
-            <div class="balance-input col text-center mt-4">
-                <h3 style="color: white;">Add Expense</h3>
-                <hr class="w-75 mx-auto" style="background-color: rgb(0, 217, 255); height: 5px;">
-                <input id="expenseType" class="form-control  mt-4 w-75 mx-auto" type="text"
-                    placeholder="Enter Expense Type" aria-label="Username" style="height: 35px;">
-                <input id="expenseAmount" class="form-control  mt-4 w-75 mx-auto" type="text" placeholder="Enter Amount"
-                    aria-label="Username" style="height: 35px;">
-                <button id="addExpense" type="button" class="btn btn-primary mt-4 w-75"
-                    style="font-weight: 700;  height: 35px;" onclick="addExpense()">Add
-                    Expenses</button>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col text-center">
-                <button type="button" class="btn btn-warning mt-4 fw-medium">Clear All <i
-                        class="fa-solid fa-eraser"></i></button>
-            </div>
-        </div>
-
-        <!-- table details -->
-
-        <div class="title row text-center mt-4 fs-4 text-light" style="display: flex; position: relative;">
-            <div style="background-color:rgba(0, 0, 0, 0.5); height: 40px;">
-                <h3>Income And Expense Details</h3>
-            </div>
-
-        </div>
-
-        <div class="row row-cols-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1">
-            <div class="col text-center">
-                <h3 class="mt-4 text-light">Income</h3>
-                <hr class="w-75 mx-auto" style="background-color: rgb(0, 217, 255); height: 5px;">
-                <table class="table mx-auto mt-4">
-                    <thead class="fw-medium fs-5 table-primary">
-                        <tr style="border-bottom: 5px rgb(206, 97, 206) solid; ">
-                            <th>Type</th>
-                            <th>Amount</th>
-                            <th>Balance</th>
-                            <th>Date&Time</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fw-medium">
-
-                    </tbody>
-
-
-                </table>
-            </div>
-
-            <div class="col text-center">
-                <h3 class="mt-4 text-light">Expense</h3>
-                <hr class="w-75 mx-auto" style="background-color: rgb(0, 217, 255); height: 5px;">
-                <table class="table mx-auto mt-4">
-                    <thead class="fw-medium fs-5 table-primary">
-                        <tr style="border-bottom: 5px rgb(206, 97, 206) solid; ">
-                            <th>Type</th>
-                            <th>Amount</th>
-                            <th>Balance</th>
-                            <th>Date&Time</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fw-medium">
-
-                    </tbody>
-
-
-                </table>
-            </div>
+            <div class="col-4"></div>
         </div>
     </div>
-
 </body>
 
 <script src="./script.js"></script>

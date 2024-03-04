@@ -50,7 +50,7 @@ function register() {
         } else {
             localStorage.setItem(uname, JSON.stringify(registerDetails))
             alert("User Registered Successfully")
-            window.location = "./login.html"
+            window.location = "./index.html"
         }
     }
 }
@@ -73,7 +73,7 @@ function login() {
             if (pswd == registerDetails.pswd) {
                 localStorage.setItem("logkey", uname)
                 alert("Login Successfull")
-                window.location = "./index.html"
+                window.location = "./home.html"
 
             } else {
                 alert("Incorrect Password")

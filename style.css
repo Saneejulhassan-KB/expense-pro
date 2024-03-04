@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(https://www.chetu.com/img/blogs/5-must-have-features-for-a-successful/5-must-have-features-for-a-successful-banking-app-banner.jpg);
+    background-size: cover;
+}
+
+
+#outer-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 2px, 2px, 20px #5f5b5b;
+}
+
+.balance-input input::placeholder {
+    font-size: large;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    body {
+        background-image: url(https://www.chetu.com/img/blogs/5-must-have-features-for-a-successful/5-must-have-features-for-a-successful-banking-app-banner.jpg);
+        background-size: cover;
+
+        height: 100vh;
+        /* Change background size to contain for smaller screens */
+    }
+}
